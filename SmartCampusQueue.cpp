@@ -158,7 +158,10 @@ void addRecord(Queue &q) {
     cout << "===== TAKE A QUEUE NUMBER =====\n";
     cout << "Input your name: ";
     getline(cin, name);
-    if (name.empty()) { cout << "Name cannot be empty.\n"; return; }
+    if (name.find_first_not_of(" \t\r\n") == string::npos) {
+        cout << "Name cannot be empty.\n";
+        return;
+    }
 
     cout << "\nSelect your service:\n";
     cout << "1. Academic Administration (010)\n";
